@@ -13,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   //Use the below to run a suite of tests from the a specific file
-  testMatch: ["tests/accessibility.test.ts"], // Match all test files in the tests directory
+  testMatch: ["tests/testsuite.test.ts"], // Match all test files in the tests directory
   testDir: './tests', // Directory where your tests are located
   /* Run tests in files in parallel */
   fullyParallel: true,
