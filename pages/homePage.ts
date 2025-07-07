@@ -20,12 +20,12 @@ export default class HomePage {
         await this.page.locator("//div[normalize-space(text())='19']").click();
     }
 
-    clickCheckAvailability() {
-        this.page.getByRole('button', { name: 'Check Availability' }).click();
+    async clickCheckAvailability() {
+        await this.page.getByRole('button', { name: 'Check Availability' }).click();
     }
 
-    clickOnDoubleRoom() {
-       this.page.locator('div').filter({ hasText: /^£150 per nightBook now$/ }).getByRole('link').click();
+    async clickOnDoubleRoom() {
+       await this.page.locator("(//a[@class='btn btn-primary'])[1]").click();
     }
 
     async enterName(name: string) {

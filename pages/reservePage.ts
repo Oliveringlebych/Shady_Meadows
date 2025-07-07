@@ -38,7 +38,6 @@ export default class ReservePage {
         await expect(this.page.getByText('size must be between 3 and 30')).toBeVisible();
         await expect(this.page.getByText('must not be empty').nth(1)).toBeVisible();
         await expect(this.page.getByText('size must be between 3 and 18')).toBeVisible();
-       // await expect(this.page.locator("//div[@role='alert']//li[7]")).toHaveText('must not be empty');
     }
 
 }

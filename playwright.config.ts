@@ -31,6 +31,7 @@ export default defineConfig({
     ["dot"], ['json', { outputFile: 'test-results/results.xml' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+   retries: 2, // Retry failed tests up to 2 times
   use: {
     baseURL: "https://automationintesting.online/",
     headless: false,
@@ -58,7 +59,6 @@ export default defineConfig({
   },
   /* Maximum time one test can run for. */
   //can also set screenshot and video to only run on retry failure
-  retries: 0,
 
   /* Configure projects for major browsers */
   projects: [

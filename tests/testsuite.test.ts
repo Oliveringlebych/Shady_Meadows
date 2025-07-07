@@ -56,7 +56,10 @@ test('Book a double room', async ({ page }) => {
     const homePage = new HomePage(page);
 
     await accessibilityTest.basicAccessibilityTest();
+    await page.waitForTimeout(3000);
+
     await homePage.clickOnDoubleRoom();
     await accessibilityTest.basicAccessibilityTest();
+    await page.waitForTimeout(3000);
 
   });
