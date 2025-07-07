@@ -30,6 +30,10 @@ export default class ReservePage {
         await this.page.getByRole('textbox', { name: 'Phone' }).fill(phone)
     }
 
+    async checkSuccessMessage() {
+        await expect(this.page.getByRole('heading', { name: 'Booking Confirmed' })).toBeVisible();
+    }
+
     async checkErrorMessages() {
         await expect(this.page.getByText('must not be empty').first()).toBeVisible();
         await expect(this.page.getByText('Lastname should not be blank')).toBeVisible();

@@ -24,7 +24,7 @@ export default class HomePage {
         await this.page.getByRole('button', { name: 'Check Availability' }).click();
     }
 
-    async clickOnDoubleRoom() {
+    async clickOnRoom() {
        await this.page.locator("(//a[@class='btn btn-primary'])[1]").click();
     }
 

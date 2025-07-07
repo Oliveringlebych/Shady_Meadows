@@ -3,27 +3,35 @@ import HomePage from '../pages/homePage';
 import ReservePage from '../pages/reservePage';
 import { Constants } from '../constants'
 import AccessibilityTest from '../pages/accessibility';
+import AdminPage from '../pages/adminPage';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(Constants.BASE_URL);
 });
 
-test('Book a double room', async ({ page }) => {
+test('Book a room', async ({ page }) => {
   const homePage = new HomePage(page);
   const reservePage = new ReservePage(page);
+  const adminPage = new AdminPage(page);
+
+  // Log into the admin panel and creates a room
+  await adminPage.clickAdminLink();
+  await adminPage.login();
+  await adminPage.createRoom();
+  await adminPage.logOut();
 
   await homePage.setCheckInDate();
   await homePage.setCheckOutDate();
   await homePage.clickCheckAvailability();
-  await homePage.clickOnDoubleRoom();
+  await homePage.clickOnRoom();
   await reservePage.reserveNow();
   await reservePage.enterFirstName(Constants.FIRST_NAME);
   await reservePage.enterLastName(Constants.LAST_NAME);
   await reservePage.enterEmail(Constants.EMAIL);
   await reservePage.enterTelephone(Constants.PHONE);
   await reservePage.reserveNow();
-  //confirmation screen is flaky, so no check here at the moment
-
+  await reservePage.checkSuccessMessage();
+  
   });
 
   test('Send message', async ({ page }) => {
@@ -42,10 +50,14 @@ test('Book a double room', async ({ page }) => {
   test('Check error message for empty fields', async ({ page }) => {
     const homePage = new HomePage(page);
     const reservePage = new ReservePage(page);
+    const adminPage = new AdminPage(page);
+
+    //Test relies on a room being available
+    await adminPage.createRoomIfNeeded();
 
     await homePage.submitMessage();
     await homePage.checkErrorMessage();
-    await homePage.clickOnDoubleRoom();
+    await homePage.clickOnRoom();
     await reservePage.reserveNow();
     await reservePage.reserveNow();
     await reservePage.checkErrorMessages();
@@ -54,12 +66,13 @@ test('Book a double room', async ({ page }) => {
   test('Check accessibility', async ({ page }) => {
     const accessibilityTest = new AccessibilityTest(page);
     const homePage = new HomePage(page);
+    const adminPage = new AdminPage(page);
+
+    //Test relies on a room being available
+    await adminPage.createRoomIfNeeded();
 
     await accessibilityTest.basicAccessibilityTest();
-    await page.waitForTimeout(3000);
-
-    await homePage.clickOnDoubleRoom();
+    await homePage.clickOnRoom();
     await accessibilityTest.basicAccessibilityTest();
-    await page.waitForTimeout(3000);
-
+    
   });
