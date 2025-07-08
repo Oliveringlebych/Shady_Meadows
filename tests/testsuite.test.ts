@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import HomePage from '../pages/homePage';
 import ReservePage from '../pages/reservePage';
 import { Constants } from '../constants'
-import AccessibilityTest from '../pages/accessibility';
+import AccessibilityPage from '../pages/accessibilityPage';
 import AdminPage from '../pages/adminPage';
 
 test.beforeEach(async ({ page }) => {
@@ -64,15 +64,15 @@ test('Book a room', async ({ page }) => {
   });
 
   test('Check accessibility', async ({ page }) => {
-    const accessibilityTest = new AccessibilityTest(page);
+    const accessibilityPage = new AccessibilityPage(page);
     const homePage = new HomePage(page);
     const adminPage = new AdminPage(page);
 
     //Test relies on a room being available
     await adminPage.createRoomIfNeeded();
 
-    await accessibilityTest.basicAccessibilityTest();
+    await accessibilityPage.basicAccessibilityTest();
     await homePage.clickOnRoom();
-    await accessibilityTest.basicAccessibilityTest();
-    
+    await accessibilityPage.basicAccessibilityTest();
+
   });

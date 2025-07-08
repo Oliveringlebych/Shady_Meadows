@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   //Use the below to run a suite of tests from the a specific file
-  testMatch: ["tests/testsuite.test.ts"], // Match all test files in the tests directory
+  testMatch: ["tests/testSuite.test.ts"], // Match all test files in the tests directory
   testDir: './tests', // Directory where your tests are located
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -25,7 +25,7 @@ export default defineConfig({
     headless: true,
 
     launchOptions: {
-     slowMo: 1000, // Slows down Playwright operations by 1000ms to
+     slowMo: 100, // Slows down Playwright operations by 250ms to
      },
 
 
