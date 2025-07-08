@@ -1,5 +1,4 @@
 import { expect, Page } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright";
 import { Constants } from '../constants';
 
 export default class AdminPage {
@@ -12,8 +11,8 @@ export default class AdminPage {
    }
 
    async login() {
-      await this.page.getByRole('textbox', { name: 'Username' }).fill('admin')
-      await this.page.getByRole('textbox', { name: 'Password' }).fill('password');
+      await this.page.getByRole('textbox', { name: 'Username' }).fill(Constants.USERNAME);
+      await this.page.getByRole('textbox', { name: 'Password' }).fill(Constants.PASSWORD);
       await this.page.locator("button[type='submit']").click();
    }
 
@@ -28,7 +27,12 @@ export default class AdminPage {
       await this.page.locator("button.btn.btn-outline-danger").click();
    }
 
-   //Test this tomorrow when less people are working on this site
+   async checkForNameGenerated() {
+      await this.page.getByRole('link', { name: 'Messages' }).click();
+      await expect(this.page.getByText(Constants.randomName)).toBeVisible();
+   }
+
+   
    async createRoomIfNeeded() {
     if ((await this.page.locator("(//a[@class='btn btn-primary'])[1]").count()) === 0) {
       await this.clickAdminLink();
@@ -36,6 +40,12 @@ export default class AdminPage {
       await this.createRoom();
       await this.logOut();
     } 
+   }
+
+   async checkIfMessageHasBeenReceived() {
+      await this.clickAdminLink();
+      await this.login();
+      await this.checkForNameGenerated();
    }
 
 

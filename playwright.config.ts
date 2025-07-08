@@ -22,7 +22,7 @@ export default defineConfig({
    retries: 2, // Retry failed tests up to 2 times
   use: {
     baseURL: "https://automationintesting.online/",
-    headless: true,
+    headless: false,
 
     launchOptions: {
      slowMo: 100, // Slows down Playwright operations by 250ms to
