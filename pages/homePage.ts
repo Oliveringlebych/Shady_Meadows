@@ -6,8 +6,6 @@ export default class HomePage {
 
     }
 
-    //Maybe see if you can get this working
-
     async setCheckInDate() {
         await this.page.locator("(//input[@class='form-control'])[1]").click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
