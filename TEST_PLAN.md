@@ -4,19 +4,19 @@
 
 # This test plan covers core user interactions on the Shady Meadows BnB platform, specifically:
 
-**Booking a room**
+**Booking a room:**
 
 Verify that room bookings are a success and visible in the admin dashboard.
 
-**Sending a message**
+**Sending a message:**
 
 Confirm that messages are a succes and visible in the admin dashboard.
 
-**Form validation**
+**Form validation:**
 
 Ensure appropriate validation errors are displayed when required fields are left empty.
 
-**Accessibility compliance**
+**Accessibility compliance:**
 
 Check that accessibility on either the home page or reserve page does not regress. The admin site is not a concern for accessibilty
 
