@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import HomePage from '../pages/homePage';
 import ReservePage from '../pages/reservePage';
-import { Constants } from '../constants'
-import AccessibilityPage from '../pages/accessibilityPage';
+import { Constants } from '../utils/constants'
+import AccessibilityPage from '../utils/accessibility';
 import AdminPage from '../pages/adminPage';
 
 test.beforeEach(async ({ page }) => {
@@ -18,7 +18,7 @@ test('Book a room', async ({ page }) => {
   await adminPage.clickAdminLink();
   await adminPage.login();
   await adminPage.createRoom();
-  await adminPage.logOut();
+  await adminPage.returnToTheHomePage();
 
   //Finds a valid date
   await homePage.setCheckInDate();
@@ -36,7 +36,7 @@ test('Book a room', async ({ page }) => {
   await reservePage.checkSuccessMessage();
 
   // Check if the booking has been received in the admin panel
-  await adminPage.checkIfMessageHasBeenReceived();
+  await adminPage.checkIfBookingHasBeenReceived();
 
   });
 

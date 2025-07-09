@@ -7,5 +7,6 @@ export const Constants = {
   SUBJECT: 'Booking Inquiry',
   DESCRIPTION: 'I would like to inquire about the availability of a double room.',
   USERNAME: 'admin',
-  PASSWORD: 'password'
+  PASSWORD: 'password',
+  userAgent: navigator.userAgent,
 };

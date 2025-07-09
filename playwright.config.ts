@@ -13,19 +13,37 @@ export default defineConfig({
   
 
    workers: 4, // limits concurrency
-  projects: [
-    { name: 'chromium', use: { browserName: 'chromium' } },
-    { name: 'firefox', use: { browserName: 'firefox' } },
-    { name: 'webkit', use: { browserName: 'webkit' } },
-  ],
   
-   retries: 2, // Retry failed tests up to 2 times
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+
+     
+     {
+       name: 'Mobile Chrome',
+       use: { ...devices['Pixel 5'] },
+    },
+  ],
+
+  retries: 2, // Retry failed tests up to 2 times
   use: {
     baseURL: "https://automationintesting.online/",
-    headless: false,
+    headless: true,
 
     launchOptions: {
-     slowMo: 100, // Slows down Playwright operations by 250ms to
+     slowMo: 500, // Slows down Playwright operations by 500ms to
      },
 
 
