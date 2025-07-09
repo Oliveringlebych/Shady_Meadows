@@ -59,3 +59,22 @@ Consistent accessibility support across all devices and screen sizes.
 **Actual Behavior:**
 
 Inconsistent or missing accessibility features depending on the device.
+
+## Bug Summary: Flaky Room Availability – Unavailable Rooms Shown as Available
+
+**Description:**
+
+The "Check Availability" feature inconsistently shows rooms that are already booked as available. This behavior is intermittent but has been observed during periods of high usage.
+
+**Impact:**
+
+High — may result in user frustration as it leads to another bug which does not provide a clear error message.
+
+**Expected Behavior:**
+
+When a user checks availability for specific dates, only rooms that are not already booked during that time should appear as available.
+
+**Actual Behavior:**
+
+Occasionally, rooms that are already booked are shown as available. Attempts to book these rooms may crash the system.
+
