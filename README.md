@@ -5,16 +5,14 @@
 ## Tech Stack
 - **Playwright** with **TypeScript**
 - **Node.js** (v22+ recommended)
+- **Visual Studio Code for viewing and running tests** 
 
 ## Project Structure
 ```
-shady-meadows/
+SHADY_MEADOWS/
 │
-├── tests/                  # Test files
-│   ├── testsuite.spec.ts
 │   
 ├── pages/                  # Page Objects
-│   ├── accessibility.ts
 │   ├── adminPage.ts
 │   ├── homePage.ts
 │   ├── reservePage.ts
@@ -23,12 +21,21 @@ shady-meadows/
 │   ├── .last-run.json
 │   ├── more will populate here on failures
 │
+├── tests/                  # Test files
+│   ├── testsuite.spec.ts
 │
-├── constants.ts
+├── utils/
+│   ├── accessibility.ts
+│   ├── constants.ts
+│   ├── deviceCheck.ts 
+│
+├── .gitignore
+├── BUG_REPORT.md
 ├── package-lock.json
 ├── package.json
 ├── playwright.config.ts
-└── README.md
+├── README.md
+└── TEST_PLAN.md
 ```
 
 ## Installation
@@ -55,12 +62,40 @@ To
 ```bash
  headless: false,
 ```
+**Failing test**
+
+Failing tests will be attempted again, this is to deal with how flakey the website can be at times.
+
+The report folder will be populated with failing tests. Example of structure is shown below if two tests were to fail.
+
+├── test-results/                  # Results
+│   ├── testSuite-Book-a-room-chromium
+│   │   ├── error-context.md
+│   │   ├── test-failed-1.png
+│   │   ├── video.webm
+│   ├── testSuite-Check-error-message-for-empty-fields-chromium
+│   │   ├── error-context.md
+│   │   ├── test-failed-1.png
+│   │   ├── video.webm
+│
+
+error-context.md:
+
+Provides context to the state of the web page on failure. Can be viewed in Visual Studio Code
+
+test-failed-1.png:
+
+Show the browser at the point of failure. Can be viewed in Visual Studio Code
+
+video.webm:
+
+Shows the entire journey of the failed test. Drag and drop the file into a web browser to view.
 
 **Note on Flaky "Book a Room" Test:**
 
-The "Book a Room" test occasionally fails, especially during periods of high usage—commonly when many users are completing the tech assessment simultaneously. Several improvements have been made to reduce flakiness, but if the issue persists:
+The "Book a Room" test occasionally fails, especially during periods of high usage commonly when many users are completing the tech assessment simultaneously. Several improvements have been made to reduce flakiness, but if the issue persists:
 
-**Log in to the admin site.**
+**Log into the admin site.**
 
 1. Username: admin
 

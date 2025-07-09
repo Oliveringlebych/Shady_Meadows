@@ -32,7 +32,7 @@ https://automationintesting.online/
 
 3. WebKit (Desktop)
 
-4. Chrome (Mobile emulation or device)
+4. Chrome (Pixel 5)
 
 # Pages to be tested:
 
@@ -54,7 +54,17 @@ For regression and cross-browser consistency in high traffic and priority areas.
 
 **Accessibility Audits:**
 
-Performed using browser tools, screen readers and automation with axe accessibility 
+Performed using browser tools, screen readers and automation with axe accessibility
+
+**Non-functional testing**
+
+Accessibility Testing:
+
+This was done using Axe plugin in line with GDS requirements
+
+Cross browser testing:
+
+This will run in Chrome Pixel 5, WebKit Desktop, Firefox Desktop and Chrome Desktop
 
 # Reporting & Follow-up
 
