@@ -1,0 +1,48 @@
+### BUG_REPORT.md
+
+# Companies House – Shady Meadows Assessment
+
+## Summary
+This report lists confirmed and potential bugs found through automated and exploratory testing. Focus areas include core workflows, UI consistency, and user role behavior. The goal is to catch regressions and ensure reliable functionality across the platform.
+
+## Bug Summary: Service Crash on Double Booking Attempt
+
+**Description:** 
+If a user attempts to book a room that has already been booked, the system crashes instead of showing an error or preventing the action.
+
+**Impact:** 
+Critical — leads to service failure and disrupts booking functionality.
+
+**Expected Behavior:** 
+User should receive a clear message that the room is unavailable.
+
+**Actual Behavior:** 
+The service crashes when a booking conflict occurs.
+
+## Bug Summary: Menu Dropdown Button Non-Functional on Mobile (Admin Site)
+
+**Description:**
+On the admin site, the menu dropdown button does not respond when accessed in phone (mobile) view.
+
+**Impact:**
+Medium — limits navigation for admin users on mobile devices.
+
+**Expected Behavior:**
+Tapping the menu button should open the navigation dropdown.
+
+**Actual Behavior:**
+Nothing happens when the menu button is tapped in phone mode.
+
+## Bug Summary: Accessibility Issues Across Screens and Devices
+
+**Description:**
+Multiple screens show accessibility issues, with the number and type of issues varying between mobile and desktop views.
+
+**Impact:**
+Medium to High — affects usability for assistive technologies and may lead to compliance violations.
+
+**Expected Behavior:**
+Consistent accessibility support across all devices and screen sizes.
+
+**Actual Behavior:**
+Inconsistent or missing accessibility features depending on the device.

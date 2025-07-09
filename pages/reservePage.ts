@@ -6,10 +6,6 @@ export default class ReservePage {
 
     }
     
-    clickOnDoubleRoom() {
-       this.page.locator('div').filter({ hasText: /^£150 per nightBook now$/ }).getByRole('link').click();
-    }
-
     async reserveNow() {
        await this.page.getByRole('button', { name: 'Reserve Now' }).click();
     }
