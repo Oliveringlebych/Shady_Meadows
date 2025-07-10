@@ -62,4 +62,7 @@ export default defineConfig({
     
   },
 
+  // Reporter. See https://playwright.dev/docs/test-reporters 
+  reporter: 'html',
+
 });

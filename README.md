@@ -45,6 +45,7 @@ cd Shady_Meadows
 npm install  @playwright/test
 npx playwright install
 ```
+Issues may occur when running these commands if HTTPS proxy settings are present in your Bash profile or if you are connected to a VPN. It is recommended to disable the VPN and comment out any HTTPS proxy settings before proceeding.
 
 ## Running Tests
 ```bash
@@ -62,6 +63,14 @@ To
 ```bash
  headless: false,
 ```
+**Test report**
+
+Once a test has been completed you can run the command below to open a report in a web browser.
+
+```bash
+npx playwright show-report
+```
+
 **Failing test**
 
 Test Retries:
@@ -122,9 +131,9 @@ The "Book a Room" test occasionally fails, particularly during high-usage period
 ## Page Object Model
 | File | Purpose |
 |------|---------|
-| `adminPage.ts` | Creates room and checks for succesful messages and room bookings |
-| `homePage.ts` | Manages all the interacteractions with the home page |
-| `reservePage.ts` | Manages all the interacteractions with the reserve page |
+| `adminPage.ts` | Creates room and checks for successful messages and room bookings |
+| `homePage.ts` | Manages all the interactions with the home page |
+| `reservePage.ts` | Manages all the interactions with the reserve page |
 
 ## Utility Files
 | File | Purpose |

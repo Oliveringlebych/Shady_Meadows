@@ -70,5 +70,5 @@ Document all identified bugs, including severity level, steps to reproduce, and 
 
 Re-test after fixes to verify that issues have been resolved.
 
-Flag any accessibility regressions, which will be prioritized for resolution.
+Flag any accessibility regressions, which will be prioritised for resolution.
 
