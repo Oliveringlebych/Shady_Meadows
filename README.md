@@ -70,6 +70,7 @@ Failing tests will be re-attempted to account for occasional website flakiness.
 Test Report Structure:
 The test-results folder will contain the results of any failing tests. An example structure is shown below in the event that two tests fail
 
+```
 ├── test-results/                  # Results
 │   ├── testSuite-Book-a-room-chromium
 │   │   ├── error-context.md
@@ -80,6 +81,7 @@ The test-results folder will contain the results of any failing tests. An exampl
 │   │   ├── test-failed-1.png
 │   │   ├── video.webm
 │
+```
 
 error-context.md:
 

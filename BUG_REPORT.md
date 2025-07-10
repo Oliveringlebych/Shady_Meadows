@@ -78,3 +78,21 @@ When a user checks availability for specific dates, only rooms that are not alre
 
 Occasionally, rooms that are already booked are incorrectly shown as available. Attempting to book these rooms can cause the system to crash.
 
+## Bug Summary: Unclear Validation Error Messages on Reserve Page
+
+**Description:**
+
+Some validation errors on the Reserve page are vague or missing key details. When users submit the form with incomplete, certain error messages do not specify which field or value is causing the issue.
+
+**Impact:**
+
+Medium — can confuse users and lead to incomplete submissions or frustration during booking.
+
+**Expected Behavior:**
+Each validation error should clearly identify the field it refers to and provide actionable guidance (e.g. “Email must not be empty”).
+
+**Actual Behavior:**
+
+Some error messages are generic (e.g. “must not be empty”) without stating which field is affected.
+
+
