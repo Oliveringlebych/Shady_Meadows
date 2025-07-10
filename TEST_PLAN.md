@@ -6,33 +6,23 @@
 
 **Booking a room:**
 
-Verify that room bookings are a success and visible in the admin dashboard.
+Ensure that room bookings are successful and appear on the admin dashboard.
 
 **Sending a message:**
 
-Confirm that messages are a succes and visible in the admin dashboard.
+Ensure that messages are sent successfully and appear in the admin dashboard.
 
 **Form validation:**
 
-Ensure appropriate validation errors are displayed when required fields are left empty.
+Ensure that appropriate validation error messages are displayed when required fields are left blank.
 
 **Accessibility compliance:**
 
-Check that accessibility on either the home page or reserve page does not regress. The admin site is not a concern for accessibilty
+Ensure that appropriate validation error messages are displayed when required fields are left blank.
 
 # Test Environments
 
 https://automationintesting.online/
-
-# Browsers:
-
-1. Chrome (Desktop)
-
-2. Firefox (Desktop)
-
-3. WebKit (Desktop)
-
-4. Chrome (Pixel 5)
 
 # Pages to be tested:
 
@@ -50,27 +40,35 @@ For UI interactions and validation.
 
 **Automated Tests:**
 
-For regression and cross-browser consistency in high traffic and priority areas.
+Ensure regression and cross browser consistency in high traffic and critical areas of the application.
 
 **Accessibility Audits:**
 
-Performed using browser tools, screen readers and automation with axe accessibility
+Accessibility testing is performed using browser tools, screen readers, and automation with Axe.
 
 **Non-functional testing**
 
 Accessibility Testing:
 
-This was done using Axe plugin in line with GDS requirements
+Accessibility testing was conducted using the Axe plugin, in alignment with GDS (Government Digital Service) requirements.
 
-Cross browser testing:
+Cross-Browser Testing:
 
-This will run in Chrome Pixel 5, WebKit Desktop, Firefox Desktop and Chrome Desktop
+Cross-browser testing will be performed on the following platforms:
+
+1. Chrome (Pixel 5)
+
+2. WebKit (Desktop)
+
+3. Firefox (Desktop)
+
+4. Chrome (Desktop)
 
 # Reporting & Follow-up
 
-Document any bugs found with severity, steps to reproduce, and screenshots.
+Document all identified bugs, including severity level, steps to reproduce, and relevant screenshots.
 
-Re-test after fixes to confirm resolution.
+Re-test after fixes to verify that issues have been resolved.
 
-Accessibility regressions will be flagged and prioritized.
+Flag any accessibility regressions, which will be prioritized for resolution.
 

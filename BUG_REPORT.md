@@ -4,21 +4,21 @@
 
 ## Summary
 
-This report lists confirmed and potential bugs found through automated and exploratory testing. Focus areas include core workflows, UI consistency, and user role behavior. The goal is to catch regressions and ensure reliable functionality across the platform.
+This report lists confirmed and potential bugs identified through both automated and exploratory testing. Focus areas include core workflows, UI consistency, and user role behavior. The primary goal is to detect regressions and ensure reliable functionality across the platform.
 
 ## Bug Summary: Service Crash on Double Booking Attempt
 
 **Description:** 
 
-If a user attempts to book a room that has already been booked, the system crashes instead of showing an error or preventing the action.
+If a user attempts to book a room that is already reserved, the system crashes instead of displaying an error message or preventing the action.
 
 **Impact:** 
 
-Critical — leads to service failure and disrupts booking functionality.
+Critical — causes service failure and disrupts booking functionality.
 
 **Expected Behavior:** 
 
-User should receive a clear message that the room is unavailable.
+The user should receive a clear message indicating that the room is unavailable.
 
 **Actual Behavior:** 
 
@@ -28,7 +28,7 @@ The service crashes when a booking conflict occurs.
 
 **Description:**
 
-On the admin site, the menu dropdown button does not respond when accessed in phone (mobile) view.
+On the admin site, the menu dropdown button is unresponsive in mobile view.
 
 **Impact:**
 
@@ -40,41 +40,41 @@ Tapping the menu button should open the navigation dropdown.
 
 **Actual Behavior:**
 
-Nothing happens when the menu button is tapped in phone mode.
+Nothing happens when the menu button is tapped in mobile mode.
 
 ## Bug Summary: Accessibility Issues Across Screens and Devices
 
 **Description:**
 
-Multiple screens show accessibility issues, with the number and type of issues varying between mobile and desktop views.
+Multiple screens exhibit accessibility issues, with the number and types of issues varying between mobile and desktop views.
 
 **Impact:**
 
-Medium to High — affects usability for assistive technologies and may lead to compliance violations.
+Medium to High — impacts usability for assistive technologies and may result in compliance violations.
 
 **Expected Behavior:**
 
-Consistent accessibility support across all devices and screen sizes.
+Consistent accessibility support should be maintained across all devices and screen sizes.
 
 **Actual Behavior:**
 
-Inconsistent or missing accessibility features depending on the device.
+Accessibility features are inconsistent or missing, depending on the device used.
 
 ## Bug Summary: Flaky Room Availability – Unavailable Rooms Shown as Available
 
 **Description:**
 
-The "Check Availability" feature inconsistently shows rooms that are already booked as available. This behavior is intermittent but has been observed during periods of high usage.
+The 'Check Availability' feature intermittently displays already-booked rooms as available. This issue occurs inconsistently but has been observed during periods of high usage.
 
 **Impact:**
 
-High — may result in user frustration as it leads to another bug which does not provide a clear error message.
+High — may lead to user frustration, as it triggers another bug that fails to display a clear error message.
 
 **Expected Behavior:**
 
-When a user checks availability for specific dates, only rooms that are not already booked during that time should appear as available.
+When a user checks availability for specific dates, only rooms that are not already booked during that period should be displayed as available.
 
 **Actual Behavior:**
 
-Occasionally, rooms that are already booked are shown as available. Attempts to book these rooms may crash the system.
+Occasionally, rooms that are already booked are incorrectly shown as available. Attempting to book these rooms can cause the system to crash.
 

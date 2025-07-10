@@ -64,9 +64,11 @@ To
 ```
 **Failing test**
 
-Failing tests will be attempted again, this is to deal with how flakey the website can be at times.
+Test Retries:
+Failing tests will be re-attempted to account for occasional website flakiness.
 
-The report folder will be populated with failing tests. Example of structure is shown below if two tests were to fail.
+Test Report Structure:
+The test-results folder will contain the results of any failing tests. An example structure is shown below in the event that two tests fail
 
 ├── test-results/                  # Results
 │   ├── testSuite-Book-a-room-chromium
@@ -81,19 +83,19 @@ The report folder will be populated with failing tests. Example of structure is 
 
 error-context.md:
 
-Provides context to the state of the web page on failure. Can be viewed in Visual Studio Code
+Provides context on the state of the web page at the time of failure and can be viewed in Visual Studio Code.
 
 test-failed-1.png:
 
-Show the browser at the point of failure. Can be viewed in Visual Studio Code
+Captures and displays the browser at the moment of failure, with the output viewable in Visual Studio Code.
 
 video.webm:
 
-Shows the entire journey of the failed test. Drag and drop the file into a web browser to view.
+Displays the full sequence of the failed test. Open the file by dragging and dropping it into a web browser.
 
 **Note on Flaky "Book a Room" Test:**
 
-The "Book a Room" test occasionally fails, especially during periods of high usage commonly when many users are completing the tech assessment simultaneously. Several improvements have been made to reduce flakiness, but if the issue persists:
+The "Book a Room" test occasionally fails, particularly during high-usage periods when many users are completing the tech assessment simultaneously. Several improvements have been made to reduce flakiness, but if the issue persists:
 
 **Log into the admin site.**
 
