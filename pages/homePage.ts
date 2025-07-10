@@ -8,26 +8,26 @@ export default class HomePage {
 
     async setCheckInDate() {
         //Added more next months clicks to avoid other users and make test less flakey
-        await this.page.locator("(//input[@class='form-control'])[1]").click();
+        await this.page.locator('div').filter({ hasText: /^Check In$/ }).getByRole('textbox').click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
-        await this.page.locator("//div[normalize-space(text())='12']").click();
+        await this.page.locator("div.react-datepicker__day.react-datepicker__day--012").click();
     }
 
      async setCheckOutDate() {
         //Added more next months clicks to avoid other users and make test less flakey
-        await this.page.locator("(//input[@class='form-control'])[2]").click();
+        await this.page.locator('div').filter({ hasText: /^Check Out$/ }).getByRole('textbox').click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
         await this.page.getByRole('button', { name: 'Next Month' }).click();
-        await this.page.locator("//div[normalize-space(text())='19']").click();
+        await this.page.locator("div.react-datepicker__day.react-datepicker__day--019").click();
     }
 
     async clickCheckAvailability() {
-        await this.page.locator("(//button[@type='button'])[2]").click();
+        await this.page.getByRole('button', { name: 'Check Availability' }).click();
     }
 
     async clickOnRoom() {
